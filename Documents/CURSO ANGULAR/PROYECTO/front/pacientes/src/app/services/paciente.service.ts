@@ -8,7 +8,7 @@ import { Paciente } from '../model/paciente';
 })
 export class PacienteService {
 
-  URL = "http://localhost:8080/api/"
+  URL = "https://apimari-production.up.railway.app/api/"
 
   constructor(private httpClient : HttpClient) { }
 

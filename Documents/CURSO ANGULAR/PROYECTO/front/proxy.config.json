@@ -1,0 +1,8 @@
+{
+   "/api/*": {
+    "target": "https://apimari-production.up.railway.app/",
+    "secure": false,
+    "logLevel": "debug"
+    
+   }
+}

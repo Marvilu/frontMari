@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PacienteComponent } from './components/paciente/paciente.component';
 import { AddPacienteComponent } from './components/paciente/add-paciente.component';
 import { FormsModule } from '@angular/forms';
-import { EditPacienteComponent } from './edit-paciente.component';
+import { EditPacienteComponent } from './components/paciente/edit-paciente.component';
 
 @NgModule({
   declarations: [
