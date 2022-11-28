@@ -1,0 +1,136 @@
+<div class="container px-8 py-4" *ngIf="paciente">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="text-center">Editar Turno</h1>
+
+      <form class="mt-4" (ngSubmit)="onUpdate()" #f="ngForm">
+
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input type="text" maxlength="60" class="form-control"
+            id="nombre"
+            name="nombre"
+            [(ngModel)]="paciente.nombre"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="apellido">Apellido:</label>
+          <input type="text" maxlength="60" class="form-control"
+            id="apellido"
+            name="apellido"
+            [(ngModel)]="paciente.apellido"
+            required>
+        </div>
+
+        <div class="my-3">
+          <label for="genero">Genero:</label>
+          <br>
+          <input type="radio"
+            name="genero"
+            ng-control="genero"
+            value="F"
+            [(ngModel)]="paciente.genero"
+            required>F
+
+            <input type="radio"
+            name="genero"
+            ng-control="genero"
+            value="M"
+            [(ngModel)]="paciente.genero"
+            required>M
+
+            <input type="radio"
+            name="genero"
+            ng-control="genero"
+            value="X"
+            [(ngModel)]="paciente.genero"
+            required>X
+          </div>
+
+
+
+        <div class="form-group">
+          <label for="edad">Edad:</label>
+          <input type="number"  class="form-control"
+            id="edad"
+            name="edad"
+            [(ngModel)]="paciente.edad"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Telefono:</label>
+          <input type="text"  class="form-control"
+            id="telefono"
+            name="telefono"
+            [(ngModel)]="paciente.telefono"
+            required>
+        </div>
+
+        <div class="form-group">
+          <label for="especialista">Obra Social:</label>
+          <input type="text"  class="form-control"
+          id="obraSocial"
+          name="obraSocial"
+          [(ngModel)]="paciente.obraSocial"
+
+            required>
+        </div>
+
+
+          <label for="obraSocial">Especialidad:</label>
+          <select class="form-select"
+          id="especialista"
+          name="especialista"
+          [(ngModel)]="paciente.especialista"
+          required>
+
+            <option value="CLINICA">Clínica</option>
+            <option value="OFTALMOLOGIA">Oftalmología</option>
+            <option value="ODONTOLOGIA">Odontología</option>
+            <option value="OTORRINOLARINGOLOGIA">Otorrinolaringología</option>
+            <option value="TRAUMATOLOGIA">Traumatología</option>
+            <option value="GINECOLOGIA">Ginecología</option>
+            <option value="CARDIOLOGIA">Cardiología</option>
+          </select>
+
+
+        <div class="my-3">
+          <label for="tieneTurno">Tiene Turno Asignado:</label>
+          <br>
+          <input type="radio"
+            name="tieneTurno"
+            ng-control="tieneTurno"
+            value="true"
+            [(ngModel)]="paciente.tieneTurno"
+            required>Si
+
+            <input type="radio"
+            name="tieneTurno"
+            ng-control="tieneTurno"
+            value="false"
+            [(ngModel)]="paciente.tieneTurno"
+            required>No
+          </div>
+
+
+          <div id="turno" class="md-form md-outline input-with-post-icon datepicker" inline="true">
+            <label for="turno">Seleccionar Fecha de Turno</label><br>
+            <input placeholder="Seleccionar Fecha" type="date"
+            id="turno"
+            name="turno"
+            [(ngModel)]="paciente.turno"
+            required
+            class="form-control">
+          </div>
+          <br>
+
+          <button class="btn btn-primary btn-sm">Guardar cambios</button>
+
+
+
+      </form>
+    </div>
+  </div>
+</div>
