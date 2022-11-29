@@ -21,18 +21,24 @@ export class PacienteComponent implements OnInit {
     this.pacienteservicio.list().subscribe(data => {this.pacientes=data; })
 
   }
-  borrar(id?: number){
-    alert("¿Está seguro que desea eliminar este turno?");
-    if(id != undefined){
-      this.pacienteservicio.delete(id).subscribe({
-        next: data => {
-          alert ("Turno eliminado Exitosamente");
-          this.cargarPacientes();
-        },error: err => {
-          alert("Error al eliminar Turno");
-        }
-    })
+
+  borrar(id?: number):void{
+    if(confirm("¿Desea eliminar este turno?")){
+      if (id!= undefined){
+        this.pacienteservicio.delete(id).subscribe({
+          next: data => {
+            alert ("Turno eliminado Exitosamente");
+            this.cargarPacientes();
+          },error: err => {
+            alert("Error al eliminar Turno");
+          }
+      })
+      }
     }
   }
+
+
+
+
 
 }

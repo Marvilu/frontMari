@@ -26,6 +26,7 @@ export class EditPacienteComponent implements OnInit {
   }
 
   onUpdate(): void {
+    if(confirm("¿Desea editar este turno?")){
     const id= this.activatedRoute.snapshot.params['id'];
     this.pacienteservice.update(id, this.paciente).subscribe({
       next: data =>{
@@ -37,6 +38,7 @@ export class EditPacienteComponent implements OnInit {
 
       }
     })
+  }
   }
 
 }
