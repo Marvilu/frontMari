@@ -41,20 +41,23 @@
           <td *ngIf="!paciente.tieneTurno">No</td>
           <td>{{ paciente.turno }}</td>
 
-          <div class="justify-content-end">
+          <div class="d-flex flex-row">
+            <div class="p-2">
             <button
               class="btn btn-danger btn-sm"
               type="button"
               (click)="borrar(paciente.id)">
               <i class="fa fa-trash">Eliminar Turno</i>
             </button>
-
+          </div>
+          <div class="p-2">
             <button
               class="btn btn-success btn-sm"
               type="button"
               routerLink="/editar/{{paciente.id}}">
               <i class="fa fa-pencil">Editar Turno</i>
             </button>
+          </div>
           </div>
 
         </tr>

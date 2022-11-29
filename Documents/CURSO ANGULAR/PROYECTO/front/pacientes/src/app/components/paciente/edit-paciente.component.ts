@@ -29,7 +29,7 @@ export class EditPacienteComponent implements OnInit {
     const id= this.activatedRoute.snapshot.params['id'];
     this.pacienteservice.update(id, this.paciente).subscribe({
       next: data =>{
-        alert("¿Turno modificado correctamente.");
+        alert("Turno modificado correctamente.");
         this.router.navigate(['']);
       }, error: err=> {
         alert("Error al modificar turno.");
